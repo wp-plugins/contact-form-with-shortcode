@@ -22,7 +22,7 @@ This is a contact form plugin. You can use widgets and shortcodes to display con
 
 = Contact Form With Shortcode PRO =
 
-The PRO version of this plugin supports Newsletter subscription. You can get it from <a href="http://aviplugins.com/contact-form-with-shortcode-pro/">here</a> in USD 5.00
+The PRO version of this plugin supports Newsletter subscription. You can get it from <a href="http://aviplugins.com/contact-form-with-shortcode-pro/">here</a> in USD 2.00
 
 * Create unlimited newsletter templats.
 * Send recent posts in the newsletter email. There are different options available to choose from to create your desired newsletter Email. Checkout the options <a href="http://aviplugins.com/contact-form-with-shortcode-pro/">here</a>.

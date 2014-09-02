@@ -13,7 +13,7 @@ This is a contact form with shortcode plugin. With option to add unlimited dynam
 
 == Description ==
 
-This is a contact form plugin. You can use widgets and shortcodes to display contact form in your theme. Unlimited number of dynamic fields can me created for contact froms.
+This is a contact form plugin. You can use widgets and shortcodes to display contact form in your theme. Unlimited number of dynamic fields can me created for contact froms. 
 
 = Other Optional Options =
 * Create unlimited number of contact forms.
@@ -22,12 +22,12 @@ This is a contact form plugin. You can use widgets and shortcodes to display con
 
 = Contact Form With Shortcode PRO =
 
-The PRO version of this plugin supports Newsletter subscription. You can get it from <a href="http://aviplugins.com/contact-form-with-shortcode-pro/">here</a> in USD 2.00
+The PRO version of this plugin supports <strong>Newsletter Subscription</strong>. You can get it from <a href="http://aviplugins.com/contact-form-with-shortcode-pro/">here</a> in <strong>USD 2.00</strong>
 
 * Create unlimited newsletter templats.
-* Send recent posts in the newsletter email. There are different options available to choose from to create your desired newsletter Email. Checkout the options <a href="http://aviplugins.com/contact-form-with-shortcode-pro/">here</a>.
-* Send Custom post types in the Newsletter Email.
-* Choose Theme for your newsletter. Downloadable themes are available to download for Newsletter Templates.
+* Send recent posts in the newsletter email. There are different <strong>options</strong> available to choose from to create your desired newsletter Email. Checkout the options <a href="http://aviplugins.com/contact-form-with-shortcode-pro/">here</a>.
+* Send <strong>Custom post types</strong> in the Newsletter Email.
+* Choose <strong>Theme</strong> for your newsletter. <strong>Downloadable</strong> themes are available to download for Newsletter Templates.
 * Send bulk Emails to the subscribers.
 
 

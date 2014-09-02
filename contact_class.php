@@ -204,6 +204,9 @@ class contact_meta_class {
 		  <tr>
 			<td><textarea name="contact_mail_body" style="width:100%; height:200px;"><?php echo $contact_mail_body;?></textarea></td>
 		  </tr>
+		  <tr>
+			<td>HTML tags can be used in the mail body.</td>
+		  </tr>
 		</table>
 		<?php
 	}

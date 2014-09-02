@@ -50,6 +50,7 @@ The PRO version of this plugin supports Newsletter subscription. You can get it 
 
 1. Contact form setup
 
+2. Contact form
 
 == Changelog ==
 

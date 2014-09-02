@@ -18,16 +18,39 @@ class contact_settings {
 			<table width="100%" border="0" style="background-color:#FFFFFF; padding:10px; border:1px dotted #999999;">
 			  <tr>
 				<td>
-				<p>This is a contact form plugin. You can use widgets and shortcodes to display contact form in your theme. Unlimited number of dynamic fields can be created for contact forms.</p>
-				<p> Unlimited number of contact forms can be created.</p>
+				<p> Create multiple contact forms for your site.</p>
+				<p> Contact forms can be displayed using widgets and shortcodes in your theme. Unlimited number of dynamic fields can be created for contact forms.</p>
 				<p> Dynamic fields can be easily included in the mail template.</p>
+				
+				<strong>Mail Body Example</strong>
+				<p> For example you have created two contact form fields</p>
+				<p> 1. "name"</p>
+				<p> 2. "phone"</p> 
+				<p> then in the email body you should use,
+				<p> 
+				<div style="border:1px solid #999999; padding:5px;">
+					<strong>Contact us mail</strong><br /><br />
+					Name: #name#<br />
+					Phone No: #phone#
+				</div>
+				</p>
+				<p> This way users Name and Phone both will be included in the e-mail body.</p>
 		 </td>
 			  </tr>
 			  <tr>
 				<td><h2>Pro Version Features</h2></td>
 			  </tr> 
 			  <tr>
-				<td>The pro version comes with Newsletter Modules</td>
+				<td>
+				<p>The PRO version of this plugin supports Newsletter subscription. You can get it from 
+				<a href="http://aviplugins.com/contact-form-with-shortcode-pro/" target="_blank">here</a>.</p>
+  <p>1. Create unlimited newsletter templats.</p>
+  <p>2. Send recent posts in the newsletter email. There are different options available to choose from to create your desired newsletter   Email. Checkout the options <a href="http://aviplugins.com/contact-form-with-shortcode-pro/" target="_blank">here</a>.</p>
+  <p>3. Send Custom post types in the Newsletter Email.</p>
+  <p>4. Choose Theme for your newsletter. Downloadable themes are available to download for Newsletter Templates. <a href="http://aviplugins.com/contact-form-with-shortcode-pro/" target="_blank">Checkout available themes</a></p>
+  <p>5. Send bulk Emails to the subscribers.</p>
+				
+				</td>
 			  </tr> 
 			</table>
 		</td>

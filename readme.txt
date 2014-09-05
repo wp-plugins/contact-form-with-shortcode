@@ -24,6 +24,7 @@ This is a contact form plugin. You can use widgets and shortcodes to display con
 
 The PRO version of this plugin supports <strong>Newsletter Subscription</strong>. You can get it from <a href="http://aviplugins.com/contact-form-with-shortcode-pro/">here</a> in <strong>USD 2.00</strong>
 
+* Enable <strong>AJAX</strong> mode for contact forms.
 * Create unlimited newsletter templats.
 * Send recent posts in the newsletter email. There are different <strong>options</strong> available to choose from to create your desired newsletter Email. Checkout the options <a href="http://aviplugins.com/contact-form-with-shortcode-pro/">here</a>.
 * Send <strong>Custom post types</strong> in the Newsletter Email.

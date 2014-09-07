@@ -4,7 +4,7 @@ Donate link: http://aviplugins.com/donate/
 Tags: contact form, email, user query, query, user mail, contact, contact widget, custom fields, contact fields, date, time, newsletter, newsletter email, mail, contact fields, newsletter template, wp newsletter, subscription, subscribers, newsletter subscribers 
 
 Requires at least: 2.0.2
-Tested up to: 3.8.1
+Tested up to: 4.0
 Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

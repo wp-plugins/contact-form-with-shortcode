@@ -1,11 +1,11 @@
 === Contact Form With Shortcode ===
 Contributors: avimegladon
 Donate link: http://aviplugins.com/donate/
-Tags: contact form, email, user query, query, user mail, contact, contact widget, custom fields, contact fields, date, time, newsletter, newsletter email, mail, contact fields, newsletter template, wp newsletter, subscription, subscribers, newsletter subscribers 
+Tags: contact form, email, user query, query, user mail, contact, contact widget, custom fields, contact fields, date, time, newsletter, newsletter email, mail, contact fields, newsletter template, wp newsletter, subscription, subscribers, newsletter subscribers, ajax contact, responsive, responsive contact, ajax form, ajax newsletter
 
 Requires at least: 2.0.2
 Tested up to: 4.0
-Stable tag: 1.0.1
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,9 +13,8 @@ This is a contact form with shortcode plugin. With option to add unlimited dynam
 
 == Description ==
 
-This is a contact form plugin. You can use widgets and shortcodes to display contact form in your theme. Unlimited number of dynamic fields can me created for contact froms. 
+This is a contact form plugin. You can use widgets and shortcodes to display contact form in your theme. Unlimited number of dynamic fields can me created for contact froms. The contact form is responsive.
 
-The contact form is responsive.  
 
 = Features =
 * Enable AJAX driven contact form submission.
@@ -45,9 +44,9 @@ The PRO version of this plugin supports <strong>Newsletter Subscription</strong>
 
 == Frequently Asked Questions ==
 
-= For any kind of problem =
+= Support =
 
-1. Please email me demoforafo@gmail.com My site is http://aviplugins.com/contact.php
+1. Please submit your queries here http://aviplugins.com/support.php
 
 
 == Screenshots ==

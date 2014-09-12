@@ -9,6 +9,7 @@ class contact_form_wid extends WP_Widget {
 			array( 'description' => __( 'Contact form widget.', 'cfws' ), )
 		);
 		add_action( 'init', array( $this, 'contact_form_process' ) );
+		add_action( 'wp_head', array( $this, 'contactAjaxSubmit' ) );
 	 }
 
 	public function widget( $args, $instance ) {
@@ -27,6 +28,7 @@ class contact_form_wid extends WP_Widget {
 		$instance = array();
 		$instance['wid_title'] = strip_tags( $new_instance['wid_title'] );
 		$instance['wid_contact_form'] = strip_tags( $new_instance['wid_contact_form'] );
+		$instance['wid_contact_ajax'] = strip_tags( $new_instance['wid_contact_ajax'] );
 		return $instance;
 	}
 
@@ -34,6 +36,7 @@ class contact_form_wid extends WP_Widget {
 	public function form( $instance ) {
 		$wid_title = $instance[ 'wid_title' ];
 		$wid_contact_form = $instance[ 'wid_contact_form' ];
+		$wid_contact_ajax = $instance[ 'wid_contact_ajax' ];
 		?>
 		<p><label for="<?php echo $this->get_field_id('wid_title'); ?>"><?php _e('Title:'); ?> </label>
 		<input class="widefat" id="<?php echo $this->get_field_id('wid_title'); ?>" name="<?php echo $this->get_field_name('wid_title'); ?>" type="text" value="<?php echo $wid_title; ?>" />
@@ -43,6 +46,9 @@ class contact_form_wid extends WP_Widget {
 			<option value="">-</option>
 			<?php $this->contactFormSelected($wid_contact_form);?>
 		</select>
+		</p>
+		<p><label for="<?php echo $this->get_field_id('wid_contact_ajax'); ?>"><?php _e('Enable Ajax:'); ?> </label>
+		<input class="widefat" type="checkbox" name="<?php echo $this->get_field_name('wid_contact_ajax'); ?>" id="<?php echo $this->get_field_id('wid_contact_ajax'); ?>" value="Yes" <?php echo $wid_contact_ajax == 'Yes'?'checked="checked"':'';?> />
 		</p>
 		<?php 
 	}
@@ -69,20 +75,47 @@ class contact_form_wid extends WP_Widget {
 	
 	public function contactWidBody($instance){
 	global $cfc;
+	$ajax_submit = '';
+	$con_form_process = 'do_process';
+	if($instance['wid_contact_ajax'] == 'Yes'){
+		$ajax_submit = 'onsubmit="return contact_afo_submit(\''.$instance['wid_contact_form'].'\');"';
+		$con_form_process = 'do_process_ajax';
+	}
 	$this->start_session();
-	$this->error_message();
+	$this->error_message($instance['wid_contact_form']);
 	?>
 	<div id="cont_forms">
-		<form name="con" action="" method="post">
+		<form name="con" id="con-<?php echo $instance['wid_contact_form'];?>" <?php echo $ajax_submit;?> action="" method="post">
 		<ul class="contact_afo id-<?php echo $instance['wid_contact_form'];?>">
 			<?php $cfc->contactFormFields($instance['wid_contact_form']); ?>
 			<input type="hidden" name="con_form_id" value="<?php echo $instance['wid_contact_form'];?>" />
-			<input type="hidden" name="con_form_process" value="do_process" />
+			<input type="hidden" name="con_form_process" value="<?php echo $con_form_process;?>" />
 			<li><div><input type="submit" name="submit" value="Submit" /></div></li>
 		</ul>
 		</form>
 	</div>
 	<?php
+	}
+	
+	
+	public function contactAjaxSubmit(){?>
+	<script type="text/javascript">
+		function contact_afo_submit(con_id){
+			var data = jQuery( "#con-"+con_id ).serialize();
+			jQuery.ajax({
+			data: data,  
+			beforeSend: function( renponse ) {}
+			})
+			.done(function( renponse ) {
+				jQuery('#con-err-msg-'+con_id).html(renponse);
+				jQuery( "#con-"+con_id ).find("input[type=text], textarea, select").val("");
+				jQuery( "#con-"+con_id ).find("input[type=checkbox]").attr('checked', false);
+				jQuery( "#con-"+con_id ).find("input[type=radio]").attr('checked', false);
+			});
+			return false;
+		}
+	</script>
+	<?php 
 	}
 	
 	public function contactFormSelected($sel){
@@ -98,13 +131,16 @@ class contact_form_wid extends WP_Widget {
 		wp_reset_postdata();
 	}
 	
-	public function error_message(){
+	public function error_message($con_id){
 		$this->start_session();
+		$e_msg = '<div id="con-err-msg-'.$con_id.'">';
 		if($_SESSION['contact_msg']){
-			echo '<div class="'.$_SESSION['contact_msg_class'].'">'.$_SESSION['contact_msg'].'</div>';
+			$e_msg .=  '<div class="'.$_SESSION['contact_msg_class'].'">'.$_SESSION['contact_msg'].'</div>';
 			unset($_SESSION['contact_msg']);
 			unset($_SESSION['contact_msg_class']);
 		}
+		$e_msg .= '</div>';
+		echo $e_msg;
 	}
 	
 
@@ -121,6 +157,16 @@ class contact_form_wid extends WP_Widget {
 				$_SESSION['contact_msg_class'] = 'cont_error';
 			}
 			wp_redirect( $this->current_page_url() );
+			exit;
+		}
+		if($_REQUEST['con_form_process'] == 'do_process_ajax'){
+			$cmc = new contact_mail_class;
+			$bol = $cmc->contact_mail_body($_REQUEST['con_form_id']);
+			if($bol){
+				echo '<div class="cont_success">'.__('Mail sent successfully.','cfs').'</div>';
+			} else {
+				echo '<div class="cont_error">'.__('Mail not sent. Please try again later.','cfs').'</div>';
+			}
 			exit;
 		}
 	}

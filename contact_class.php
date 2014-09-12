@@ -53,7 +53,7 @@ class contact_class {
 	function display_contact_sc( $column, $post_id ){
 		 switch ( $column ) {
 			case 'sc' :
-				echo '[contactwid id="'.$post_id.'" title="'.get_the_title($post_id).'"]';
+				echo '[contactwid id="'.$post_id.'" title="'.get_the_title($post_id).'" ajax="No"]';
 				break;
 		}
 	}
@@ -202,7 +202,8 @@ class contact_meta_class {
 		?>
 		<table width="100%" border="0" style="background-color:#FFFFFF;">
 		  <tr>
-			<td><textarea name="contact_mail_body" style="width:100%; height:200px;"><?php echo $contact_mail_body;?></textarea></td>
+			<td>
+			<textarea name="contact_mail_body" style="width:100%; height:200px;"><?php echo $contact_mail_body;?></textarea></td>
 		  </tr>
 		  <tr>
 			<td>HTML tags can be used in the mail body.</td>

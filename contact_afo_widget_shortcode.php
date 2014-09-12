@@ -4,6 +4,7 @@ function contact_widget_shortcode( $atts ) {
 	 extract( shortcode_atts( array(
 	      'title' => '',
 		  'id' => '',
+		  'ajax' => 'No'
      ), $atts ) );
     
 	if(!$id)
@@ -14,7 +15,7 @@ function contact_widget_shortcode( $atts ) {
 	if($title){
 		echo '<h2>'.$title.'</h2>';
 	}
-	$cfw->contactWidBody(array('wid_contact_form' => $id));
+	$cfw->contactWidBody(array('wid_contact_form' => $id, 'wid_contact_ajax' => $ajax ));
 	$ret = ob_get_contents();	
 	ob_end_clean();
 	return $ret;

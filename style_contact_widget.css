@@ -20,6 +20,12 @@ padding:8px;
 }
 
 
+.field-desc{
+clear: both;
+width: 100%;
+float: left;
+font-style:italic;
+}
 
 div#cont_forms{
 margin:1%;

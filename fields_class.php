@@ -27,13 +27,21 @@ class fields_class {
 		}
 	}
 	
-	function genField($field = 'text',$name = '',$id='',$value = '',$options, $required=''){
+	function get_field_desc($desc = ''){
+		if($desc){
+			return '<span class="field-desc">'.strip_tags(html_entity_decode($desc)).'</span>';
+		}
+	}
+	
+	function genField($field = 'text',$name = '',$id='',$value = '', $desc = '', $options, $required=''){
 		switch ($field){
 			case 'text':
 				echo '<input type="text" name="'.$name.'" id="'.$id.'" value="'.$value.'" '.$required.'>';
+				echo $this->get_field_desc($desc);
 			break;
 			case 'textarea':
 				echo '<textarea name="'.$name.'" id="'.$id.'" '.$required.'>'.$value.'</textarea>';
+				echo $this->get_field_desc($desc);
 			break;
 			case 'select':
 				$options = explode(",",$options);
@@ -48,6 +56,7 @@ class fields_class {
 						}
 					}
 				echo '</select>';
+				echo $this->get_field_desc($desc);
 			break;
 			case 'checkbox':
 				$options = explode(",",$options);
@@ -59,6 +68,8 @@ class fields_class {
 								echo ' <input type="checkbox" name="'.$name.'[]" id="'.$id.'" value="'.$val.'" '.$required.'/>'.$val;
 							}
 						}
+						echo $this->get_field_desc($desc);
+						$this->checkboxJsCall($name);
 					}
 			break;
 			case 'radio':
@@ -72,17 +83,21 @@ class fields_class {
 							}
 						}
 					}
+					echo $this->get_field_desc($desc);
 			break;
 			case 'date':
 				echo '<input type="text" name="'.$name.'" class="wp_reg_date" id="'.$id.'" value="'.$value.'" '.$required.'>';
+				echo $this->get_field_desc($desc);
 				$this->dateJsCall();
 			break;
 			case 'time':
 				echo '<input type="text" name="'.$name.'" class="wp_reg_time" id="'.$id.'" value="'.$value.'" '.$required.'>';
+				echo $this->get_field_desc($desc);
 				$this->dateJsCall();
 			break;
 			default:
 				echo '<input type="text" name="'.$name.'" id="'.$id.'" value="'.$value.'" '.$required.'>';
+				echo $this->get_field_desc($desc);
 			break;
 		}
 	}
@@ -100,6 +115,22 @@ class fields_class {
 	<?php 
 	}
 	
+	function checkboxJsCall($name=''){?>
+		<script type="text/javascript">
+			var	checkboxes = jQuery('input[name="<?php echo $name;?>[]"]');
+			checkboxes.click(function() {
+			var checkedCheckboxes = jQuery('input[name="<?php echo $name;?>[]"]:checked');
+			if(checkedCheckboxes.length) {
+					checkboxes.removeAttr('required');
+				} else {
+					checkboxes.attr('required', 'required');
+				}
+			 });
+		</script>
+	<?php 
+	}
+	
+	
 	function contactFormFields($id){
 		$extra_fields = get_post_meta( $id, '_contact_extra_fields', true );
 		if(is_array($extra_fields)){
@@ -112,7 +143,7 @@ class fields_class {
 					?>
 					<li><div>
 						<label for="<?php echo $value['field_label'];?>"><?php echo $value['field_label'];?></label>
-						<div><?php $this->genField($value['field_type'],$value['field_name'],$value['field_name'],'', $value['field_values'],$required);?></div>
+						<div><?php $this->genField($value['field_type'], $value['field_name'], $value['field_name'], '', $value['field_desc'], $value['field_values'], $required);?></div>
 					</div></li>
 				<?php
 			}

@@ -3,7 +3,7 @@
 Plugin Name: Contact Form With Shortcode
 Plugin URI: http://aviplugins.com/
 Description: This is a contact form plugin. You can use widgets and shortcodes to display contact form in your theme. Unlimited number of dynamic fields can me created for contact froms.
-Version: 1.0.1
+Version: 1.1.1
 Author: avimegladon
 Author URI: http://avifoujdar.wordpress.com/
 */

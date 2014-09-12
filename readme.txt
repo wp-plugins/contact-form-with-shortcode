@@ -15,7 +15,10 @@ This is a contact form with shortcode plugin. With option to add unlimited dynam
 
 This is a contact form plugin. You can use widgets and shortcodes to display contact form in your theme. Unlimited number of dynamic fields can me created for contact froms. 
 
-= Other Optional Options =
+The contact form is responsive.  
+
+= Features =
+* Enable AJAX driven contact form submission.
 * Create unlimited number of contact forms.
 * Create dynamic form fields.
 * Easily email Setup - Form Name, From E-mail and E-mail Body
@@ -24,7 +27,7 @@ This is a contact form plugin. You can use widgets and shortcodes to display con
 
 The PRO version of this plugin supports <strong>Newsletter Subscription</strong>. You can get it from <a href="http://aviplugins.com/contact-form-with-shortcode-pro/">here</a> in <strong>USD 2.00</strong>
 
-* Enable <strong>AJAX</strong> mode for contact forms.
+* <strong>AJAX</strong> mode for contact and newsletter subscription forms.
 * Create unlimited newsletter templats.
 * Send recent posts in the newsletter email. There are different <strong>options</strong> available to choose from to create your desired newsletter Email. Checkout the options <a href="http://aviplugins.com/contact-form-with-shortcode-pro/">here</a>.
 * Send <strong>Custom post types</strong> in the Newsletter Email.
@@ -53,10 +56,15 @@ The PRO version of this plugin supports <strong>Newsletter Subscription</strong>
 
 2. Contact form
 
+3. Contact form widget.
+
 == Changelog ==
 
 = 1.0.1 =
 * this is the first release.
+
+= 2.0.1 =
+* AJAX driven contact form added
 
 
 == Upgrade Notice ==

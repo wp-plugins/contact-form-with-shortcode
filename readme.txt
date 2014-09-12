@@ -62,7 +62,7 @@ The PRO version of this plugin supports <strong>Newsletter Subscription</strong>
 = 1.0.1 =
 * this is the first release.
 
-= 2.0.1 =
+= 1.1.1 =
 * AJAX driven contact form added
 
 

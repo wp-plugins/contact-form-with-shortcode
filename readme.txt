@@ -33,6 +33,7 @@ The PRO version of this plugin supports <strong>Newsletter Subscription</strong>
 * Choose <strong>Theme</strong> for your newsletter. <strong>Downloadable</strong> themes are available to download for Newsletter Templates.
 * Send bulk Emails to the subscribers.
 
+> Checkout other plugins <a href="http://aviplugins.com/wp-register-profile-pro/">WP Register Profile</a>, <a href="http://aviplugins.com/custom-post-type-attachment-pro/">Post Type Attachment</a>, <a href="http://aviplugins.com/contact-form-with-shortcode-pro/">Newsletter Subscription</a>, <a href="http://aviplugins.com/wp-support-pro/">WP Support (PRO)</a>.
 
 == Installation ==
 

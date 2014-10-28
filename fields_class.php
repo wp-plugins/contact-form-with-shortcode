@@ -1,7 +1,7 @@
 <?php
 class fields_class {
 	
-	public $fields = array('text','textarea','select','checkbox','radio','date','time');
+	public $fields = array('text','textarea','select','checkbox','radio','date','time','file');
 	
 	function __construct() {
 		add_action( 'admin_init', array( $this, 'field_save_settings' ) );
@@ -94,6 +94,10 @@ class fields_class {
 				echo '<input type="text" name="'.$name.'" class="wp_reg_time" id="'.$id.'" value="'.$value.'" '.$required.'>';
 				echo $this->get_field_desc($desc);
 				$this->dateJsCall();
+			break;
+			case 'file':
+				echo '<input type="file" name="'.$name.'" id="'.$id.'" '.$required.'>';
+				echo $this->get_field_desc($desc);
 			break;
 			default:
 				echo '<input type="text" name="'.$name.'" id="'.$id.'" value="'.$value.'" '.$required.'>';
@@ -197,6 +201,13 @@ class fields_class {
 				echo '<input type="hidden" name="field_values" id="field_values" value="not_required"/>';
 			break;
 			case 'time':
+				echo '<p>Field Label <input type="text" name="field_label" id="field_label" placeholder="Field Label" required/></p>';
+				echo '<p>Field Name <input type="text" name="field_name" id="field_name" placeholder="Field Name" required/><span>Use only letters</span></p>';
+				echo '<p>Field Description <input type="text" name="field_desc" id="field_desc" placeholder="Field Description"/></p>';
+				echo '<p>Field is required <select name="field_required" id="field_required"><option value="Yes">Yes</option><option value="No">No</option></select></p>';
+				echo '<input type="hidden" name="field_values" id="field_values" value="not_required"/>';
+			break;
+			case 'file':
 				echo '<p>Field Label <input type="text" name="field_label" id="field_label" placeholder="Field Label" required/></p>';
 				echo '<p>Field Name <input type="text" name="field_name" id="field_name" placeholder="Field Name" required/><span>Use only letters</span></p>';
 				echo '<p>Field Description <input type="text" name="field_desc" id="field_desc" placeholder="Field Description"/></p>';
@@ -308,6 +319,15 @@ class fields_class {
 				$ret .= '<input type="hidden" name="field_types[]" value="'.$field_type.'"/>';
 			break;
 			case 'time':
+				$ret .= '<p>Field Label <input type="text" name="field_labels[]" placeholder="Field Label" value="'.$field_label.'" required/></p>';
+				$ret .= '<p>Field Name <input type="text" name="field_names[]" placeholder="Field Name" value="'.$field_name.'" required/><span>Use only letters</span></p>';
+				$ret .= '<p>Field Description <input type="text" name="field_descs[]" value="'.$field_desc.'"  placeholder="Field Description"/></p>';
+				
+				$ret .= '<p>Field is required <select name="field_requireds[]"><option value="Yes" '.($field_required=='Yes'?'selected="selected"':'').'>Yes</option><option value="No" '.($field_required=='No'?'selected="selected"':'').'>No</option></select></p>';
+				$ret .= '<input type="hidden" name="field_values_array[]" value="not_required"/>';
+				$ret .= '<input type="hidden" name="field_types[]" value="'.$field_type.'"/>';
+			break;
+			case 'file':
 				$ret .= '<p>Field Label <input type="text" name="field_labels[]" placeholder="Field Label" value="'.$field_label.'" required/></p>';
 				$ret .= '<p>Field Name <input type="text" name="field_names[]" placeholder="Field Name" value="'.$field_name.'" required/><span>Use only letters</span></p>';
 				$ret .= '<p>Field Description <input type="text" name="field_descs[]" value="'.$field_desc.'"  placeholder="Field Description"/></p>';

@@ -1,11 +1,11 @@
 === Contact Form With Shortcode ===
 Contributors: avimegladon
 Donate link: http://aviplugins.com/donate/
-Tags: contact form, email, user query, query, user mail, contact, contact widget, custom fields, contact fields, date, time, newsletter, newsletter email, mail, contact fields, newsletter template, wp newsletter, subscription, subscribers, newsletter subscribers, ajax contact, responsive, responsive contact, ajax form, ajax newsletter, contact widget, widget contact, ajax contact widget
+Tags: contact form, email, user query, query, user mail, contact, contact widget, custom fields, contact fields, date, time, newsletter, newsletter email, mail, contact fields, newsletter template, wp newsletter, subscription, subscribers, newsletter subscribers, ajax contact, responsive, responsive contact, ajax form, ajax newsletter, contact widget, widget contact, ajax contact widget, file attachment, contact file, contact file upload, file upload
 
 Requires at least: 2.0.2
 Tested up to: 4.0
-Stable tag: 1.1.1
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,12 +21,14 @@ This is a contact form plugin. You can use widgets and shortcodes to display con
 * Create unlimited number of contact forms.
 * Create dynamic form fields.
 * Easy contact email Setup.
-
+* Option to upload files in contact forms. Uploaded files will be mailed as attachments to the selected  mail address. Supported files are jpg, jpeg, png, gif, doc, docx, pdf.
+  
 = Contact Form With Shortcode PRO =
 
 The PRO version of this plugin supports <strong>Newsletter Subscription</strong>. You can get it from <a href="http://aviplugins.com/contact-form-with-shortcode-pro/">here</a> in <strong>USD 2.00</strong>
 
 * <strong>AJAX</strong> mode for contact and newsletter subscription forms.
+* Only selected file types can be uploaded and send as attachment. File types can be Enabled/ Disabled from settings page.
 * Create unlimited newsletter templats.
 * Send recent posts in the newsletter email. There are different <strong>options</strong> available to choose from to create your desired newsletter Email. Checkout the options <a href="http://aviplugins.com/contact-form-with-shortcode-pro/">here</a>.
 * Send <strong>Custom post types</strong> in the Newsletter Email.
@@ -59,6 +61,10 @@ The PRO version of this plugin supports <strong>Newsletter Subscription</strong>
 3. Contact form widget.
 
 == Changelog ==
+
+
+= 2.0.0 =
+* Files can be uploaded in contact forms.
 
 = 1.0.1 =
 * this is the first release.

@@ -85,7 +85,7 @@ class contact_form_wid extends WP_Widget {
 	$this->error_message($instance['wid_contact_form']);
 	?>
 	<div id="cont_forms">
-		<form name="con" id="con-<?php echo $instance['wid_contact_form'];?>" <?php echo $ajax_submit;?> action="" method="post">
+		<form name="con" id="con-<?php echo $instance['wid_contact_form'];?>" <?php echo $ajax_submit;?> action="" method="post" enctype="multipart/form-data">
 		<ul class="contact_afo id-<?php echo $instance['wid_contact_form'];?>">
 			<?php $cfc->contactFormFields($instance['wid_contact_form']); ?>
 			<input type="hidden" name="con_form_id" value="<?php echo $instance['wid_contact_form'];?>" />

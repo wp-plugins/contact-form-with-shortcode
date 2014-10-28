@@ -19,9 +19,10 @@ class contact_settings {
 			<table width="100%" border="0" style="background-color:#FFFFFF; padding:10px; border:1px dotted #999999;">
 			  <tr>
 				<td>
-				<p> Create multiple contact forms for your site.</p>
-				<p> Contact forms can be displayed using widgets and shortcodes in your theme. Unlimited number of dynamic fields can be created for contact forms.</p>
-				<p> Dynamic fields can be easily included in the mail template.</p>
+				<p>1. Create multiple contact forms for your site.</p>
+				<p>2. Contact forms can be displayed using widgets and shortcodes in your theme. Unlimited number of dynamic fields can be created for contact forms.</p>
+				<p>3. Dynamic fields can be easily included in the mail template.</p>
+				<p>4. Files can be uploaded as attachment in contact forms. Supported file types are <strong>jpg, jpeg, png, gif, doc, docx, pdf</strong></p>
 				
 				<strong>Mail Body Example</strong>
 				<p> For example you have created two contact form fields</p>

@@ -2,10 +2,9 @@
 Contributors: avimegladon
 Donate link: http://aviplugins.com/donate/
 Tags: contact form, email, user query, query, user mail, contact, contact widget, custom fields, contact fields, date, time, newsletter, newsletter email, mail, contact fields, newsletter template, wp newsletter, subscription, subscribers, newsletter subscribers, ajax contact, responsive, responsive contact, ajax form, ajax newsletter, contact widget, widget contact, ajax contact widget, file attachment, contact file, contact file upload, file upload
-
 Requires at least: 2.0.2
 Tested up to: 4.0
-Stable tag: 2.0.0
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +61,8 @@ The PRO version of this plugin supports <strong>Newsletter Subscription</strong>
 
 == Changelog ==
 
+= 2.1.0 =
+* File upload error message modified.
 
 = 2.0.0 =
 * Files can be uploaded in contact forms.

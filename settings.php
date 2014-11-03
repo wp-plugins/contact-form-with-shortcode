@@ -64,7 +64,7 @@ class contact_settings {
 	function contact_wid_pro_add(){ ?>
 	<table width="98%" border="0" style="background-color:#FFFFD2; border:1px solid #E6DB55; padding:0px 0px 0px 10px; margin:2px;">
   <tr>
-    <td><p>The PRO version of this plugin supports <strong>Newsletter Subscription</strong> with option to choose different newsletter <strong>Themes</strong>. You can get it <a href="http://aviplugins.com/contact-form-with-shortcode-pro/" target="_blank">here</a> in <strong>USD 2.00</strong></p></td>
+    <td><p>The PRO version of this plugin supports <strong>Newsletter Subscription</strong> and additional contact form settings. with option to choose different newsletter <strong>Themes</strong>. You can get it <a href="http://aviplugins.com/contact-form-with-shortcode-pro/" target="_blank">here</a> in <strong>USD 2.00</strong></p></td>
   </tr>
 </table>
 	<?php }

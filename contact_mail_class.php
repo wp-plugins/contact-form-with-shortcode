@@ -14,11 +14,18 @@ class contact_mail_class {
 		$form_fields 		= get_post_meta( $contact->ID, '_contact_extra_fields', true );
 		$body 				= get_post_meta( $contact->ID, '_contact_mail_body', true );
 		$attachments = array();
+		$att_msg = '';
 		
 		if(is_array($form_fields)){
 			foreach($form_fields as $k => $v){
 				if($v['field_type'] == 'file'){
-					$attachments[] = $this->get_file_attachments($v['field_name']);
+					$a_file = $this->get_file_attachments($v['field_name']);
+					if($a_file){
+						$attachments[] = $a_file;
+					} else {
+						$att_msg = __(' File not uploaded.');
+					}
+					
 				} else {
 					$body = str_replace('#'.$v['field_name'].'#', $_REQUEST[$v['field_name']], $body);
 				}
@@ -29,13 +36,17 @@ class contact_mail_class {
 			$to_mail
 		);
 		
-		
 		$headers[] = 'From: ' . $form_name . ' <' . $from_mail . '>';
 		
 		add_filter( 'wp_mail_content_type', array($this, 'set_html_content_type') );
 		$bol = wp_mail( $multiple_to_recipients, $contact_subject ,$body, $headers, $attachments );
 		remove_filter( 'wp_mail_content_type', array($this, 'set_html_content_type') );
-		return $bol;
+		
+		if($bol){
+			return array('msg' => __('Mail sent successfully.','cfs') . $att_msg, 'error' => 0);
+		} else {
+			return array('msg' => __('Mail not sent. Please try again later.','cfs') . $att_msg, 'error' => 1);
+		}
 	}
 	
 	public function get_file_attachments($name){
@@ -49,9 +60,10 @@ class contact_mail_class {
 			$movefile = wp_handle_upload( $uploadedfile, $upload_overrides );
 			if ( $movefile ) {
 				return $movefile['file'];
-			} 
+			}
+		} else {
+			return false;
 		}
-		
 	}
 	
 	public function set_html_content_type() {

@@ -148,12 +148,12 @@ class contact_form_wid extends WP_Widget {
 		$this->start_session();
 		if($_REQUEST['con_form_process'] == 'do_process'){
 			$cmc = new contact_mail_class;
-			$bol = $cmc->contact_mail_body($_REQUEST['con_form_id']);
-			if($bol){
-				$_SESSION['contact_msg'] = __('Mail sent successfully.','cfs');
+			$msg = $cmc->contact_mail_body($_REQUEST['con_form_id']);
+			if(!$msg['error']){
+				$_SESSION['contact_msg'] = $msg['msg'];
 				$_SESSION['contact_msg_class'] = 'cont_success';
 			} else {
-				$_SESSION['contact_msg'] = __('Mail not sent. Please try again later.','cfs');
+				$_SESSION['contact_msg'] = $msg['msg'];
 				$_SESSION['contact_msg_class'] = 'cont_error';
 			}
 			wp_redirect( $this->current_page_url() );
@@ -161,11 +161,11 @@ class contact_form_wid extends WP_Widget {
 		}
 		if($_REQUEST['con_form_process'] == 'do_process_ajax'){
 			$cmc = new contact_mail_class;
-			$bol = $cmc->contact_mail_body($_REQUEST['con_form_id']);
-			if($bol){
-				echo '<div class="cont_success">'.__('Mail sent successfully.','cfs').'</div>';
+			$msg = $cmc->contact_mail_body($_REQUEST['con_form_id']);
+			if(!$msg['error']){
+				echo '<div class="cont_success">'.$msg['msg'].'</div>';
 			} else {
-				echo '<div class="cont_error">'.__('Mail not sent. Please try again later.','cfs').'</div>';
+				echo '<div class="cont_error">'.$msg['msg'].'</div>';
 			}
 			exit;
 		}

@@ -134,7 +134,7 @@ class contact_form_wid extends WP_Widget {
 	public function error_message($con_id){
 		$this->start_session();
 		$e_msg = '<div id="con-err-msg-'.$con_id.'">';
-		if($_SESSION['contact_msg']){
+		if(isset($_SESSION['contact_msg']) and $_SESSION['contact_msg']){
 			$e_msg .=  '<div class="'.$_SESSION['contact_msg_class'].'">'.$_SESSION['contact_msg'].'</div>';
 			unset($_SESSION['contact_msg']);
 			unset($_SESSION['contact_msg_class']);
@@ -146,7 +146,7 @@ class contact_form_wid extends WP_Widget {
 
 	public function contact_form_process(){
 		$this->start_session();
-		if($_REQUEST['con_form_process'] == 'do_process'){
+		if(isset($_REQUEST['con_form_process']) and $_REQUEST['con_form_process'] == 'do_process'){
 			$cmc = new contact_mail_class;
 			$msg = $cmc->contact_mail_body($_REQUEST['con_form_id']);
 			if(!$msg['error']){
@@ -159,7 +159,7 @@ class contact_form_wid extends WP_Widget {
 			wp_redirect( $this->current_page_url() );
 			exit;
 		}
-		if($_REQUEST['con_form_process'] == 'do_process_ajax'){
+		if(isset($_REQUEST['con_form_process']) and $_REQUEST['con_form_process'] == 'do_process_ajax'){
 			$cmc = new contact_mail_class;
 			$msg = $cmc->contact_mail_body($_REQUEST['con_form_id']);
 			if(!$msg['error']){

@@ -8,13 +8,13 @@ class fields_class {
 	}
 	
 	function field_save_settings(){
-		if($_POST['option'] == "addNewField"){
+		if(isset($_POST['option']) and $_POST['option'] == "addNewField"){
 			$field = $_REQUEST['field'];
 			$this->newFieldForm($field);
 			exit;
 		}
 		
-		if($_POST['option'] == "saveField"){
+		if(isset($_POST['option']) and $_POST['option'] == "saveField"){
 			$field_type 		 = $_REQUEST['field_type'];
 			$field_label 		 = $_REQUEST['field_label'];
 			$field_name 		 = str_replace(" ","_",strtolower(trim($_REQUEST['field_name'])));
@@ -228,7 +228,7 @@ class fields_class {
 	
 	
 	function fieldList(){
-		$ret .= '<select name="field_list" id="field_list" onchange="selectField(this)">';
+		$ret  = '<select name="field_list" id="field_list" onchange="selectField(this)">';
 		$ret .= '<option value="">--</option>';
 		foreach($this->fields as $key => $value){
 			$ret .= '<option value="'.$value.'">'.$value.'</option>';
@@ -238,7 +238,7 @@ class fields_class {
 	}
 	
 	function addedField($field_type,$field_label,$field_name,$field_desc,$field_required,$field_values){
-		$ret .= '<div style="border:1px dotted #333333; padding:5px; height:80px; overflow:hidden; margin:2px;">';
+		$ret  = '<div style="border:1px dotted #333333; padding:5px; height:80px; overflow:hidden; margin:2px;">';
 		$ret .= '<div style="min-height: 37px;">';
 		
 		$ret .= '<font color="#BF4237;">Label:</font> '.substr($field_label,0,10);

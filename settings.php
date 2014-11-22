@@ -71,8 +71,8 @@ class contact_settings {
 	
 	
 	function contact_widget_afo_menu () {
-		add_menu_page( 'Contact Form Usage', 'Contact Form Usage', 10, 'contact_form_settings', array( $this,'contact_widget_afo_options' ) );	
-		add_submenu_page('contact_form_settings', 'Contact Forms', 'Contact Forms', 10 , 'edit.php?post_type=contact_form');
+		add_menu_page( 'Contact Form Usage', 'Contact Form Usage', 'activate_plugins', 'contact_form_settings', array( $this,'contact_widget_afo_options' ) );	
+		add_submenu_page('contact_form_settings', 'Contact Forms', 'Contact Forms', 'activate_plugins', 'edit.php?post_type=contact_form');
 	}
 	
 		

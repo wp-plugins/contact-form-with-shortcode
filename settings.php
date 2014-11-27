@@ -69,6 +69,9 @@ class contact_settings {
 </table>
 	<?php }
 	
+	function contact_form_load_text_domain(){
+		load_plugin_textdomain('cfws', FALSE, basename( dirname( __FILE__ ) ) .'/languages');
+	}
 	
 	function contact_widget_afo_menu () {
 		add_menu_page( 'Contact Form Usage', 'Contact Form Usage', 'activate_plugins', 'contact_form_settings', array( $this,'contact_widget_afo_options' ) );	
@@ -78,6 +81,7 @@ class contact_settings {
 		
 	function load_settings(){
 		add_action( 'admin_menu' , array( $this, 'contact_widget_afo_menu' ) );
+		add_action( 'plugins_loaded',  array( $this, 'contact_form_load_text_domain' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'contact_plugin_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'contact_plugin_styles' ) );
 	}

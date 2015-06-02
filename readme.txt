@@ -3,7 +3,7 @@ Contributors: avimegladon
 Donate link: http://aviplugins.com/donate/
 Tags: contact form, email, user query, query, user mail, contact, contact widget, custom fields, contact fields, date, time, newsletter, newsletter email, mail, contact fields, newsletter template, wp newsletter, subscription, subscribers, newsletter subscribers, ajax contact, responsive, responsive contact, ajax form, ajax newsletter, contact widget, widget contact, ajax contact widget, file attachment, contact file, contact file upload, file upload
 Requires at least: 2.0.2
-Tested up to: 4.2.1
+Tested up to: 4.2.2
 Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

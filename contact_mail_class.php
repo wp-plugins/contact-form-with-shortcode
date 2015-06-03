@@ -20,8 +20,9 @@ class contact_mail_class {
 			foreach($form_fields as $k => $v){
 				if($v['field_type'] == 'file'){
 					$a_file = $this->get_file_attachments($v['field_name']);
-					if($a_file){
-						$attachments[] = $a_file;
+					if(is_array($a_file) and $a_file['file']){
+						$attachments[] = $a_file['file'];
+						$attachments_db[] = $a_file['url'];
 					} else {
 						$att_msg = __(' File not uploaded.');
 					}
@@ -31,6 +32,8 @@ class contact_mail_class {
 				}
 			}
 		}
+		
+		do_action( 'contact_store_db', $id, $attachments_db, $_REQUEST );
 		
 		$multiple_to_recipients = array(
 			$to_mail
@@ -59,7 +62,7 @@ class contact_mail_class {
 		if(in_array($uploaded_type, $sup_attachment_files_array)) {
 			$movefile = wp_handle_upload( $uploadedfile, $upload_overrides );
 			if ( $movefile ) {
-				return $movefile['file'];
+				return array('file' => $movefile['file'], 'url' => $movefile['url'] );
 			}
 		} else {
 			return false;

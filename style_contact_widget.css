@@ -1,0 +1,131 @@
+.cont_error {
+    color: #FF0000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-weight: 500;
+	width:100%;
+	float:left;
+}
+
+.cont_success {
+    color: #336600;  
+    float: left;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-weight: 500;
+    width: 100%;
+}
+
+
+.field_form_table td{
+padding:8px;
+}
+
+
+.field-desc{
+clear: both;
+width: 100%;
+float: left;
+font-style:italic;
+}
+
+div#cont_forms{
+margin:1%;
+}  
+
+
+/* Makes cont_forms fields.Sets size and field alignment.*/
+div#cont_forms input[type=text],
+input[type=email],
+input[type=password],
+input[type=url],
+input[type=tel]
+ {
+width:100%;
+  padding: 15px;
+ /* border-radius:5px;*/
+  border:1px solid #CCCCCC;
+}
+div#cont_forms textarea{
+	width:100%;
+    border:1px solid #CCCCCC;
+	/*border-radius:5px */
+  }
+
+
+div#cont_forms div{
+  padding:10px 0;
+}
+ 
+div#cont_forms input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=url]:focus,
+input[type=tel]:focus,
+textarea:focus {
+  border-color: #999999; 
+}
+
+div#cont_forms label{
+margin-left:0;
+}
+
+/* Sets form button size*/
+div#cont_forms input[type=submit]{
+width: auto;
+/*border-radius:5px;*/
+margin-right:1%
+}
+
+/* By using @ media form can have different layout for screen, mobile phone, tablet.*/
+
+/* Sets the form layout for mobile phone, tablet*/
+@media screen and (max-device-width: 600px) {
+
+div#cont_forms{
+margin:1%;
+}  
+
+/* Makes cont_forms fields.Sets size and field alignment.*/
+div#cont_forms input[type=text],
+input[type=email],
+input[type=password],
+input[type=url],
+input[type=tel]
+ {
+width:100%;
+  padding: 15px;
+  /*border-radius:5px;*/
+  border:1px solid #7ac9b7;
+}
+div#cont_forms textarea{
+	width:100%;
+    border:1px solid #7ac9b7;
+	/*border-radius:5px */
+  }
+
+
+div#cont_forms div{
+  padding:10px 0;
+}
+ 
+div#cont_forms input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=url]:focus,
+input[type=tel]:focus,
+textarea:focus {
+
+  border-color: #4697e4;
+}
+div#cont_forms label{
+margin-left:0;
+}
+
+
+div#cont_forms input[type=submit]{
+width:160px;
+padding:20px 2px;
+/*border-radius:5px;*/
+border:2px solid  #4697e4;
+margin-right:10%
+}
+}

@@ -35,14 +35,6 @@ The PRO version of this plugin supports <strong>Newsletter Subscription</strong>
 * Choose <strong>Theme</strong> for your newsletter. <strong>Downloadable</strong> themes are available to download for Newsletter Templates.
 * Send bulk Emails to the subscribers.
 
-= Contact Form With Shortcode DB =
-
-This addon allows you to store contact form data to database. You can get it from <a href="http://www.aviplugins.com/contact-form-with-shortcode-db/">here</a> in <strong>USD 1.50</strong>
-
-* Store Contact Form data to database.
-* View stored data in admin panel.
-* Export data in XLS format.
-
 
 > Checkout other plugins <a href="http://aviplugins.com/wp-register-profile-pro/">WP Register Profile</a>, <a href="http://aviplugins.com/custom-post-type-attachment-pro/">Post Type Attachment</a>, <a href="http://aviplugins.com/contact-form-with-shortcode-pro/">Newsletter Subscription</a>, <a href="http://aviplugins.com/wp-support-pro/">WP Support (PRO)</a>.
 
@@ -53,6 +45,12 @@ This addon allows you to store contact form data to database. You can get it fro
 3. Crate a new contact form and setup the form fields.
 4. Use widget or shortcodes to display the contact form in frontend.
 
+= Contact Form With Shortcode DB =
+If you want to store the contact form data to database and view the stored data from admin panel then use this Addon. Get it from <a href="http://www.aviplugins.com/contact-form-with-shortcode-db/">aviplugins.com</a> in <strong>USD 1.50</strong>
+
+* Store Contact Form data to database.
+* View stored data in admin panel.
+* Export data in XLS format.
 
 == Frequently Asked Questions ==
 

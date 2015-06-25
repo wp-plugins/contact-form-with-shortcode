@@ -24,7 +24,7 @@ if (!function_exists('afonews_dashboard_widget_function')) {
 				echo '<li>
 				<h4>'.$value->title.'</h4>
 				<span>'.$value->date.'</span>
-				<p>'.$value->desc.'</p>
+				<p>'.html_entity_decode($value->desc).'</p>
 				</li>';
 			}
 			echo '</ul>';
